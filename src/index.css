@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+input, textarea{
+    all: unset;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: inset 2px 4px 10px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+}
+
+button{
+    all: unset;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(108, 108, 237);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    font-weight:bolder;
+    max-width: 100px;
+    min-width: 70px;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+button:hover{
+    background-color: rgba(1, 1, 98, 0.8);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    color: white;
+}
+
+
+button:disabled{
+    background-color: rgb(108, 108, 237, 0.5);
+    box-shadow: none;
+}
+
+
+h4{
+    border-bottom: 1px solid black;
+}
+
+body{
+    background-image: url(/src/media/4873411.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+label{
+    font-weight: bolder;
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#mandatory{
+    color: red;
+    font-weight: bolder;
+}
+
+#submit{
+    background-color: green;
+    color: white;
+}
+
+#submit:hover{
+    background-color: darkgreen;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+#submit:disabled{
+    background-color: rgb(252, 105, 109);
+    box-shadow: none;
+}
