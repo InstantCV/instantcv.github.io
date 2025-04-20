@@ -5,7 +5,7 @@ import './index.css'
 import { BrowserRouter, Routes, Route } from 'react-router'
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename='/'>
     <Routes>
       <Route path="/" element={<App/>}/>
       <Route path="/final-resume" element={<FinalResume/>}/>
