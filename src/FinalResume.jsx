@@ -30,10 +30,11 @@ export default function FinalResume() {
     };
 
     return (
-        <div className="flex flex-col md:flex-row justify-center items-center min-h-screen bg-gray-100">
+        <div className="flex flex-col md:flex-row justify-center items-center min-h-screen bg-gray-100 scale-75 md:scale-100">
+            {window.innerWidth < 768 && <h1>Scroll down to find download button</h1>}
             <div
                 ref={contentRef}
-                className="border-2 border-solid border-black w-[794px] h-auto flex flex-col p-6 bg-white"
+                className="border-2 border-solid border-black tranform scale-50 md:scale-100 w-[794px] h-auto flex flex-col p-6 bg-white"
                 style={{ boxSizing: "border-box" }}
             >
                 <h1 className="text-center mb-0">{resumeContent.name}</h1>
