@@ -90,21 +90,36 @@ function App() {
 
         <div ref={sectionRef3} className={centerStyle}>
           <label htmlFor="schNo">How many college/school you want to mention (Max:2)</label>
-          <input value={schNo} id="schNo" type="number" onChange={e=>setSchNO(Number(e.target.value))} min={1} max={2}></input>
-          {schNo > 0 && <Education schNo={schNo} previous={sectionRef2} next={sectionRef4}/>}
+          <select onChange={e=>setSchNO(Number(e.target.value))}>
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+          </select>
+          {schNo > 0 &&  <Education schNo={schNo} previous={sectionRef2} next={sectionRef4}/>}
         </div>
 
         <div ref={sectionRef4} className={centerStyle}>
         <h3>You can add upto 5 Experience and projects combined</h3>
         <label htmlFor="expNo">No. of Experience you want to mention:</label>
-        <input id="expNo" type="number" onChange={e=>setExpNO(Number(e.target.value))} min={0} max={5}></input>
+        <select onChange={e => setExpNO(Number(e.target.value))}>
+          {Array(6).fill(0).map((_, index) => (
+            <option key={index} value={index}>
+              {index}
+            </option>
+          ))}
+        </select>
         {expNo > 0 ? <Experience expNo={expNo} previous={sectionRef3} next={expNo === 5 ? sectionRef6 : sectionRef5}/> : <button type="button" onClick={()=>scrollToNext(sectionRef5)}>Skip</button>}
         </div>
 
         <div ref={sectionRef5} className={centerStyle}>
         <h3>You can add upto {5-expNo} projects</h3>
         <label htmlFor="remExpNo">No. of Experience you want to mention:</label>
-        <input id="remExpNo" type="number" onChange={e=>setRemExpNo(Number(e.target.value))} min={0} max={5-expNo}></input>
+        <select onChange={e => setRemExpNo(Number(e.target.value))}>
+          {Array(6-expNo).fill(0).map((_, index) => (
+            <option key={index} value={index}>
+              {index}
+            </option>
+          ))}
+        </select>
         {remExpNo > 0 ? <Projects remExpNo={remExpNo} previous={expNo === 0 ? sectionRef3 : sectionRef4} next={sectionRef6}/> : <><button type="button" onClick={()=>scrollToNext(sectionRef4)}>Previous</button> <button type="button" onClick={()=>scrollToNext(sectionRef6)}>Skip</button></>}
         </div>
 
