@@ -77,7 +77,7 @@ export default function Projects({remExpNo, previous, next}){
                         <textarea
                             id={`points-${index}`}
                             rows={5}
-                            cols={100}
+                            cols={window.innerHeight<768 ? 40 : 100}
                             placeholder="End each point with a '|' except for last point  for example: point1|point2|point3"
                             name={`proPoints-${index}`}
                             required

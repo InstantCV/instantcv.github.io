@@ -8,14 +8,6 @@ import { useNavigate } from "react-router";
 
 function App() {
 
-if(window.innerWidth <768){
-  return (
-    <div className="h-screen flex items-center justify-center flex-col">
-      <h1>Mobile version is not supported for now</h1>
-      <h2>Please open in desktop</h2>
-    </div>
-  )
-}
 
   const navigate = useNavigate()
   const handleNavigation = (e) => {
@@ -87,10 +79,10 @@ if(window.innerWidth <768){
             <input id="email" name="email" type="email" required onChange={e=>setEmail(e.target.value)}></input>
             <br></br>
             <label htmlFor="linkedIn">LinkedIn:</label> 
-            <input id="linkedIn" type="text"></input>
+            <input name="linkedIn" id="linkedIn" type="text"></input>
             <br></br>
             <label htmlFor="gitHub">GitHub:</label> 
-            <input id="gitHub" type="text"></input>
+            <input name="gitHub" id="gitHub" type="text"></input>
           </div>
           <button type="button" onClick={() => scrollToNext(sectionRef1)}>Back</button>
           <button disabled={!(name && phNo && email)} type="button" onClick={() => scrollToNext(sectionRef3)}>Next</button>

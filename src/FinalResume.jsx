@@ -30,7 +30,7 @@ export default function FinalResume() {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gray-100">
+        <div className="flex flex-col md:flex-row justify-center items-center min-h-screen bg-gray-100">
             <div
                 ref={contentRef}
                 className="border-2 border-solid border-black w-[794px] h-auto flex flex-col p-6 bg-white"
